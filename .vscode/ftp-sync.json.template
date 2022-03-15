@@ -1,7 +1,7 @@
 {
   "remotePath": "./dev",
   "host": "50.62.149.32",
-  "username": "joshua@kpop-burger.com",
+  "username": "username",
   "password": "password",
   "port": 21,
   "secure": false,

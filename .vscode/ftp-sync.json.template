@@ -16,7 +16,10 @@
   "ignore": [
     "\\.vscode",
     "\\.git",
-    "\\.DS_Store"
+    "\\.DS_Store",
+    "\\.well-known",
+    "cgi-bin",
+    "\\.gitignore"
   ],
   "generatedFiles": {
     "extensionsToInclude": [

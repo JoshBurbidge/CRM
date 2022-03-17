@@ -12,7 +12,7 @@
 
 <body>
   <?php include("components/header.php"); 
-  echo $_SERVER['REQUEST_URI'];  ?>
+  // echo $_SERVER['REQUEST_URI'];  ?>
   <div class="container mt-4">
     <?php
   # get products from database

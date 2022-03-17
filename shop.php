@@ -11,28 +11,31 @@
 </head>
 
 <body>
-
-  <div class="container">
+  <?php include("components/header.php"); 
+  echo $_SERVER['REQUEST_URI'];  ?>
+  <div class="container mt-4">
     <?php
   # get products from database
 
-  for ($i=0; $i < 3; $i++) { 
+  for ($i=0; $i < 6; $i++) { 
     ?>
-    <div class="row justify-content-evenly">
+    <div class="row justify-content-evenly py-4">
       <?php
     for ($j=0; $j < 3; $j++) { 
     ?>
 
       <div class="col-3">
 
-        <div class="card">
-          <h3 class="card-header">Header</h3>
-          <img class="card-img-top" src="images/placeholder.jpg" alt="image" width="100" height="100">
-          <div class="card-body">
-            <h3 class="card-title">Card Title</h3>
-            <div class="card-text">Card Content</div>
+        <a href="#" class="text-decoration-none text-reset">
+          <div class="card">
+            <!-- <h3 class="card-header">Header</h3> -->
+            <img class="card-img-top" src="images/placeholder.jpg" alt="image" width="100" height="100">
+            <div class="card-body">
+              <h3 class="card-title">Card Title</h3>
+              <div class="card-text">Card Content</div>
+            </div>
           </div>
-        </div>
+        </a>
 
       </div>
 

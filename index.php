@@ -12,20 +12,28 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Brand</a>
+  <!-- <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand nav-link" href="#">Brand</a>
     <ul class="navbar-nav">
       <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
       <li class="nav-item"><a href="shop.html" class="nav-link">Shop</a></li>
     </ul>
-  </nav>
+  </nav> -->
+  <?php include("components/header.php") ?>
   <h1>Home</h1>
 
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-    crossorigin="anonymous"></script>
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+  </script>
 </body>
 
+
+
 </html>
+<style type="text/css">
+/* body {
+  background-image: url("images/background.png")
+} */
+</style>

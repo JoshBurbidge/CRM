@@ -14,7 +14,11 @@
 </head>
 
 <body>
-  <?php include("components/header.php") ?>
+  <?php include("components/header.php");
+  echo "cookies: "; 
+  foreach ($_COOKIE as $key => $val) {
+    echo $key . ": " . $val;
+  } ?>
   <div class="container">
     <h1 class="mt-4 fw-bold">Business name/ tagline</h1>
     <hr class="border-0 bg-dark" style="height:2px;">

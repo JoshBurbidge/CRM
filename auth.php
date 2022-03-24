@@ -5,10 +5,10 @@ $username = $_POST["username"];
 $password = $_POST["password"];
 
 $db = new mysqli($servername, $db_username, $db_password, $default_db);
-$sql = "SELECT * FROM customer WHERE username = ? AND password = ?";
+$sql = "SELECT * FROM account_login WHERE username = ? AND password = ?";
 $stmt = $db->prepare($sql);
 $stmt->bind_param('ss', $username, $password);
-$stmt->bind_result($id, $user, $pass);
+$stmt->bind_result($id, $cust, $email, $user, $pass);
 
 $stmt->execute();
 

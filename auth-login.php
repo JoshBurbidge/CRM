@@ -12,6 +12,7 @@ $stmt->bind_result($id, $cust, $email, $user, $pass);
 
 $stmt->execute();
 
+
 // if false - error
 // if null - no data (no user found)
 // if true - user found

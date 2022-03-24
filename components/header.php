@@ -22,11 +22,11 @@ $page = end($uri);
       </li>
     </ul>
 
-    <?php if ($_COOKIE["userId"]) :?>
+    <?php if (!$_COOKIE["userId"]) :?>
     <!-- if no user is logged in -->
     <div class="d-flex me-2 navbar-nav">
       <button class="btn btn-outline-light">
-        <a href="login.php" class="text-decoration-none text-reset">Log In</a>
+        <a href="register.php" class="text-decoration-none text-reset">Log In/Sign Up</a>
       </button>
     </div>
 

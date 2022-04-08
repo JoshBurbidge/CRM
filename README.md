@@ -14,7 +14,7 @@ You can just follow these steps and push to Github if you don't want to do the F
 
 ## Pushing to our server via FTP
 
-Push to the server from the master branch. If you want to push a different branch then make a subdomain on cPanel and replace `./dev` with `./your-subdomain` in `ftp-sync.json`.
+Once you develop and test something locally, you can push it to our server to make sure it works there. Push to the server from the master branch. If you want to push a different branch then make a subdomain on cPanel and replace `./dev` with `./your-subdomain` in `ftp-sync.json`.
 
 1. Download extension "ftp-sync" in VSCode.
 2. Copy the file `.vscode/ftp-sync.json.template`, remove `.template` from the filename of the copy and put your cPanel FTP username and password in the `username` and `password` fields.

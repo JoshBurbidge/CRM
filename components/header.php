@@ -41,4 +41,3 @@ $page = end($uri);
 
   </div>
 </nav>
-<!-- <?php if ($_COOKIE["userId"]) echo $_COOKIE["userId"] ?> -->

@@ -56,13 +56,24 @@
 
           </div>
         </div>
+
         <?php
           }
         ?>
 
       </div>
+
+      <form action="buy.php" method="post">
+        <input type="hidden" name="products[]" value="1">
+        <input type="hidden" name="products[]" value="2">
+        <button class="btn btn-primary" type="submit">Buy something</button>
+      </form>
     </div>
+
+
   </section>
+
+
 
   <!-- Footer-->
   <footer class="py-5 bg-dark">

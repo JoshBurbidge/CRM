@@ -57,7 +57,7 @@
 
         <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         <!-- <button class="w-100 btn btn-lg btn-primary my-3" type="submit">Register</button> -->
-        <p><a href="register.php">Create Account</a></p>
+        <p>Or <a href="register.php">Create An Account</a></p>
         <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
       </form>
     </main>

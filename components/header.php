@@ -26,7 +26,7 @@ $page = end($uri);
     <!-- if no user is logged in -->
     <div class="d-flex me-2 navbar-nav">
       <button class="btn btn-outline-light">
-        <a href="register.php" class="text-decoration-none text-reset">Log In/Sign Up</a>
+        <a href="login.php" class="text-decoration-none text-reset">Log In/Sign Up</a>
       </button>
     </div>
 

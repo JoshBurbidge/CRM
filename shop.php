@@ -44,7 +44,7 @@
         ?>
         <div class="col mb-5">
           <div class="card h-100">
-            <img class="card-img-top" src="images/placeholder.jpg" alt="product" />
+            <img class="card-img-top" src="images/<?php echo $product->image ?>" alt="product" />
             <div class="card-body p-4">
               <div class="d-flex flex-column align-items-center">
                 <h5 class="fw-bolder"><?php echo $product->name ?></h5>

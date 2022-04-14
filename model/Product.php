@@ -3,9 +3,10 @@ class Product {
   public $name;
   public $price;
   
-  function __construct($name, $price) {
+  function __construct($name, $price, $image) {
     $this->name = $name;
     $this->price = $price;
+    $this->image = $image;
   }
 }
 
@@ -20,7 +21,8 @@ function getProducts() {
 
   $products = [];
   while ($stmt->fetch()) {
-    array_push($products, new Product($name, $price));
+    $image = $name.".jpg";
+    array_push($products, new Product($name, $price, $image));
   }
   $conn->close();
 

@@ -41,7 +41,7 @@
         <input type="hidden" name="products[]" value="2">
         <button class="btn btn-primary" type="submit">Buy something</button>
       </form>
-      <div class="row gx-4 gx-lg-5 row-cols-3 row-cols-md-4 row-cols-xl-5 justify-content-center">
+      <div class="row gx-4 gx-lg-5 row-cols-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
 
         <?php
           foreach ($products as $product) {
@@ -53,6 +53,7 @@
               <div class="d-flex flex-column align-items-center">
                 <h5 class="card-title"><?php echo $product->name ?></h5>
                 <div class="card-text"><?php echo $product->group ?></div>
+                <div class="card-text text-muted">model: <?php echo $product->code ?></div>
                 <div class="card-text"><?php echo $product->price ?></div>
                 <a href="add-to-cart.php?id=<?php echo $product->id ?>"
                   class="btn btn-outline-primary">Add to Cart</a>

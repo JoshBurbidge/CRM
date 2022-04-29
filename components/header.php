@@ -38,11 +38,11 @@ $page = end($uri);
 
     <?php else: ?>
     <!-- if user is logged in -->
-    <div class="d-flex me-2 navbar-nav">
+    <!-- <div class="d-flex me-2 navbar-nav">
       <button class="btn btn-outline-light">
         <a href="#" class="text-decoration-none text-reset">Profile</a>
       </button>
-    </div>
+    </div> -->
     <?php endif ?>
 
   </div>

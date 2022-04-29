@@ -22,6 +22,12 @@ $page = end($uri);
       </li>
     </ul>
 
+    <div class="d-flex me-2 navbar-nav">
+      <a href="cart.php" class="btn btn-outline-light">
+        Cart
+      </a>
+    </div>
+
     <?php if (!$_COOKIE["userId"]) :?>
     <!-- if no user is logged in -->
     <div class="d-flex me-2 navbar-nav">

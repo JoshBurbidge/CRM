@@ -19,30 +19,25 @@ function getAllProducts() {
   $conn = new mysqli($servername, $db_username, $db_password, $default_db);
   $sql = "SELECT * FROM product";
   $stmt = $conn->prepare($sql);
-  // $stmt->bind_result($id, $name, $price, $type, $quantity);
+  $stmt->bind_result($id, $cat, $subcat, $group, $vendor, $name, $model, $cost, $price, $weight);
   $stmt->execute();
-  $results = $stmt->get_result();
+  // $results = $stmt->get_result(); // need to do fetch instead
 
   $products = [];
-  // while ($stmt->fetch()) {
-  foreach ($results as $row) {
-    $name = $row["product_name"];
-    $id = $row["product_id"];
+  while ($stmt->fetch()) {
+  // foreach ($results as $row) {
+    // $name = $row["product_name"];
+    // $id = $row["product_id"];
 
-    $price = $row["product_cost"];
-    $code = $row["product_model"];
-    $group = $row["product_group"];
+    // $price = $row["product_cost"];
+    // $code = $row["product_model"];
+    // $group = $row["product_group"];
     $image = "placeholder.jpg";
-    array_push($products, new Product($name, $price, $code, $image, $group, $id));
+    array_push($products, new Product($name, $price, $model, $image, $group, $id));
   }
     
   
   $conn->close();
-
-  // $products = [];
-  // for ($i=0; $i < 10; $i++) { 
-  //   array_push($products, new Product("Product", 9.99));
-  // }
   return $products;
 }
 
@@ -51,25 +46,26 @@ function getProducts($list) {
 
   $conn = new mysqli($servername, $db_username, $db_password, $default_db);
   $products = [];
-  
-
 
   foreach ($list as $item) {
     $sql = "SELECT * FROM product where product_id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param('s', $item);
+    // use price
+    $stmt->bind_result($id, $cat, $subcat, $group, $vendor, $name, $model, $cost, $price, $weight);
     $stmt->execute();
-    $results = $stmt->get_result();
+    // $results = $stmt->get_result();
 
-    foreach ($results as $row) {
-      $name = $row["product_name"];
-      $id = $row["product_id"];
+    // foreach ($results as $row) {
+    while($stmt->fetch()) {
+      // $name = $row["product_name"];
+      // $id = $row["product_id"];
   
-      $price = substr($row["product_cost"], 1);
-      $code = $row["product_model"];
-      $group = $row["product_group"];
+      $price = substr($price, 1);
+      // $code = $row["product_model"];
+      // $group = $row["product_group"];
       $image = "placeholder.jpg";
-      array_push($products, new Product($name, $price, $code, $image, $group, $id));
+      array_push($products, new Product($name, $price, $model, $image, $group, $id));
     }
   }
     

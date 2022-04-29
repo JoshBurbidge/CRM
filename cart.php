@@ -10,6 +10,8 @@ $total = 0.0;
 
 <head>
   <link rel="stylesheet" href="css/cart.css">
+  <meta name="description" content="shopping cart template adapted from bbbootstrap.com">
+  <title>Cart</title>
 </head>
 
 <body>
@@ -32,12 +34,13 @@ $total = 0.0;
 
         <div class="row border-top border-bottom">
           <div class="row main align-items-center">
-            <div class="col-2"><img class="img-fluid" src="https://i.imgur.com/1GrakTl.jpg"></div>
+            <div class="col-2"><img class="img-fluid" src="images/<?php echo $product->image ?>">
+            </div>
             <div class="col">
               <h2 class="row"><?php echo $product->name ?></h2>
               <div class="row"><?php echo $product->group ?></div>
             </div>
-            <div class="col">1</div>
+            <div class="col">quantity: 1</div>
             <div class="col">&dollar; <?php echo $product->price ?> </div>
           </div>
         </div>

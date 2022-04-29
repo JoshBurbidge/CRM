@@ -32,7 +32,10 @@ function getAllProducts() {
     // $price = $row["product_cost"];
     // $code = $row["product_model"];
     // $group = $row["product_group"];
-    $image = "placeholder.jpg";
+    $image = str_replace(" ", "-", $name).".jpg";
+    if (!file_exists("images/".$image)){
+      $image = "placeholder.jpg";
+    }
     array_push($products, new Product($name, $price, $model, $image, $group, $id));
   }
     
@@ -64,7 +67,10 @@ function getProducts($list) {
       $price = substr($price, 1);
       // $code = $row["product_model"];
       // $group = $row["product_group"];
-      $image = "placeholder.jpg";
+      $image = str_replace(" ", "-", $name).".jpg";
+      if (!file_exists("images/".$image)){
+        $image = "placeholder.jpg";
+      }
       array_push($products, new Product($name, $price, $model, $image, $group, $id));
     }
   }

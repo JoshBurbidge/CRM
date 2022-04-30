@@ -28,7 +28,7 @@ $page = end($uri);
       </a>
     </div>
 
-    <?php if (!$_COOKIE["userId"]) :?>
+    <?php if (!isset($_COOKIE["userId"])) :?>
     <!-- if no user is logged in -->
     <div class="d-flex me-2 navbar-nav">
       <button class="btn btn-outline-light">

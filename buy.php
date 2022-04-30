@@ -27,7 +27,7 @@ $idStmt->fetch();
 // $custStmt->execute();
 // $orderId = $custStmt->insert_id;
 
-$sql = "INSERT INTO orders (product_id, customer_id, quantity) VALUES (?,?, 1)";
+$sql = "INSERT INTO order_info (product_id, customer_id, orderMethod_id, quantity) VALUES (?,?, 3, 1)";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('ss', $product, $custId);
 

@@ -39,4 +39,4 @@ foreach ($products as $product) {
 $conn->commit();
 $conn->close();
 
-header('location: shop.php');
+header('location: .');

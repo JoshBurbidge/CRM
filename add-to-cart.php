@@ -8,4 +8,4 @@ if (isset($_COOKIE["cart"])) {
 } else {
   setcookie("cart", $id);
 }
-header("location: shop.php");
+header("location: .");

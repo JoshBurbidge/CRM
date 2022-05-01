@@ -57,7 +57,7 @@ $total = 0.0;
         <a href="clear-cart.php" class="btn btn-outline-danger mt-4">Clear Cart</a>
         <?php } ?>
 
-        <div class="back-to-shop"><a href="shop.php">&leftarrow;<span class="text-muted">Back to
+        <div class="back-to-shop"><a href=".">&leftarrow;<span class="text-muted">Back to
               shop</span></a></div>
       </div>
       <div class="col-md-4 summary">

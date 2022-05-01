@@ -10,13 +10,14 @@ $page = end($uri);
 
     <ul class="navbar-nav me-auto">
       <li class="nav-item">
-        <a href="." class="nav-link <?php echo $page == "" ? "active" : "" ?>">
+        <a href="." class="nav-link ">
           Home
         </a>
       </li>
 
       <li class="nav-item">
-        <a href="shop.php" class="nav-link <?php echo $page == "shop.php" ? "active" : "" ?>">
+        <a href="."
+          class="nav-link <?php echo $page == "" || $page == "index.php" ? "active" : "" ?>">
           Shop
         </a>
       </li>

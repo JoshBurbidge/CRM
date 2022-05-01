@@ -53,10 +53,10 @@
               <div class="d-flex flex-column align-items-center">
                 <h5 class="card-title"><?php echo $product->name ?></h5>
                 <div class="card-text"><?php echo $product->group ?></div>
-                <div class="card-text text-muted">model: <?php echo $product->code ?></div>
-                <div class="card-text"><?php echo $product->price ?></div>
+                <div class="card-text text-muted my-2">model: <?php echo $product->code ?></div>
+                <div class="card-text my-2"><?php echo $product->price ?></div>
                 <a href="add-to-cart.php?id=<?php echo $product->id ?>"
-                  class="btn btn-outline-primary">Add to Cart</a>
+                  class="btn btn-outline-primary mt-2">Add to Cart</a>
               </div>
             </div>
 

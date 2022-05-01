@@ -8,7 +8,7 @@ $db = new mysqli($servername, $db_username, $db_password, $default_db);
 $sql = "SELECT * FROM account_login WHERE username = ?";
 $stmt = $db->prepare($sql);
 $stmt->bind_param('s', $username);
-$stmt->bind_result($id, $cust, $email, $user, $pass);
+$stmt->bind_result($id, $user, $pass);
 
 $stmt->execute();
 // $stmt->fetch();
@@ -24,9 +24,16 @@ if ($stmt->fetch()) {
   $insert = "INSERT INTO account_login (username, `password`) VALUES (?, ?)";
   $insert_stmt = $db->prepare($insert);
   $insert_stmt->bind_param('ss', $username, $password);
-  $stmt->bind_result($id, $cust, $email, $user, $pass);
+  $stmt->bind_result($id, $user, $pass);
 
   $insert_stmt->execute();
+  $accId = $insert_stmt->insert_id;
+
+  $cust = "INSERT INTO customer (account_id) VALUES (?)";
+  $cust_stmt = $db->prepare($cust);
+  $cust_stmt->bind_param('s', $accId);
+  $cust_stmt->execute();
+
 
   // echo "rows: " . $insert_stmt->affected_rows;
   // log in user and go to homepage

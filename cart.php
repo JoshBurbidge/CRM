@@ -32,7 +32,11 @@ $total = 0.0;
             <div class="col align-self-center text-right text-muted"></div>
           </div>
         </div>
-        <?php foreach ($products as $product) { 
+        <?php 
+        if (empty($products)) {
+          echo "Your cart is empty";
+        } else {
+        foreach ($products as $product) { 
           $total = $total + $product->price;
           ?>
 
@@ -49,7 +53,7 @@ $total = 0.0;
           </div>
         </div>
 
-        <?php } ?>
+        <?php }} ?>
 
         <div class="back-to-shop"><a href="shop.php">&leftarrow;<span class="text-muted">Back to
               shop</span></a></div>
@@ -68,7 +72,8 @@ $total = 0.0;
           <?php foreach ($products as $product) { ?>
           <input type="hidden" name="products[]" value="<?php echo $product->id?>">
           <?php } ?>
-          <button class="btn btn-primary" type="submit">CHECKOUT</button>
+          <button class="btn btn-primary" type="submit"
+            <?php echo empty($products) ? "disabled" : "" ?>>CHECKOUT</button>
         </form>
       </div>
     </div>

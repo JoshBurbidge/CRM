@@ -27,13 +27,24 @@ $idStmt->fetch();
 // $custStmt->execute();
 // $orderId = $custStmt->insert_id;
 
-$sql = "INSERT INTO order_info (product_id, customer_id, orderMethod_id, quantity) VALUES (?,?, 3, 1)";
+$track = "INSERT INTO tracking (tracking_number) values (?)";
+$trackStmt = $conn->prepare($track);
+$rand = rand(1,999999);
+
+$trackStmt->bind_param('s', $rand);
+$trackStmt->execute();
+$trackId = $trackStmt->insert_id;
+
+
+$sql = "INSERT INTO order_info (product_id, customer_id, orderMethod_id, units_orders, tracking_id) VALUES (?,?, 3, 1, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('ss', $product, $custId);
+$stmt->bind_param('sss', $product, $custId, $trackId);
 
 foreach ($products as $product) {
   $stmt->execute();
 }
+
+
 
 // printf("%d row inserted.\n", $stmt->affected_rows);
 $conn->commit();

@@ -20,12 +20,6 @@ $idStmt->fetch();
 # otherwise next $conn->prepare() will fail.
 $idStmt->fetch();
 
-// $custSql = "INSERT INTO customer_order (customer_id) VALUES (?)";
-// $custStmt = $conn->prepare($custSql);
-// // print_r($custStmt);
-// $custStmt->bind_param('s', $custId);
-// $custStmt->execute();
-// $orderId = $custStmt->insert_id;
 
 $track = "INSERT INTO tracking (tracking_number) values (?)";
 $trackStmt = $conn->prepare($track);
@@ -40,14 +34,31 @@ $sql = "INSERT INTO order_info (product_id, customer_id, orderMethod_id, units_o
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('sss', $product, $custId, $trackId);
 
+$prod = "SELECT product_name from product where product_id = ?";
+$prodStmt = $conn->prepare($prod);
+$prodStmt->bind_param('s', $product);
+$prodStmt->bind_result($name);
+//$prodStmt->execute();
+
+$prodNames = [];
+
 foreach ($products as $product) {
   $stmt->execute();
 }
 
+foreach ($products as $product) {
+  $prodStmt->execute();
+  while($prodStmt->fetch()) {
+      array_push($prodNames, $name);
+  }
+}
+print_r($prodNames);
 
 
 // printf("%d row inserted.\n", $stmt->affected_rows);
 $conn->commit();
+session_start();
+$_SESSION['flash_message'] = "Success! You have purchased ".implode(', ', $prodNames);
 $conn->close();
 
 header('location: .');

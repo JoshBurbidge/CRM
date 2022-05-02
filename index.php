@@ -41,6 +41,18 @@
         <input type="hidden" name="products[]" value="2">
         <button class="btn btn-primary" type="submit">Buy something</button>
       </form> -->
+      <?php
+        session_start();
+        
+        if(isset($_SESSION['flash_message'])) {
+            $message = $_SESSION['flash_message'];
+            unset($_SESSION['flash_message']);
+            // echo $message;
+            echo '<div class="alert alert-success">';
+            echo $message;
+            echo '</div>';
+        } ?>
+
       <div class="row gx-4 gx-lg-5 row-cols-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
 
         <?php

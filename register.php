@@ -41,6 +41,17 @@
 
   <div class="content">
     <main class="form-signin">
+      <?php
+      session_start();
+      if(isset($_SESSION['account'])) {
+              $message = $_SESSION['account'];
+              unset($_SESSION['account']);
+              // echo $message;
+              echo '<div class="alert alert-primary">';
+              echo $message;
+              echo '</div>';
+          }
+      ?>
 
       <form action="auth-register.php" method="post">
         <img class="mb-4" src="images/placeholder.jpg" alt="" width="72" height="57">

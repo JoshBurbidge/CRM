@@ -75,7 +75,7 @@ $total = 0.0;
           <input type="hidden" name="products[]" value="<?php echo $product->id?>">
           <?php } ?>
           <button class="btn btn-primary" type="submit"
-            <?php echo empty($products) ? "disabled" : "" ?>>CHECKOUT</button>
+            <?php echo empty($products) || !isset($_COOKIE["userId"]) ? "disabled" : "" ?>>CHECKOUT</button>
         </form>
       </div>
     </div>
